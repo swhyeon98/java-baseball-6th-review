@@ -31,4 +31,8 @@ public class Umpire {
     public String getResult() {
         return gameStatus.toString();
     }
+
+    public boolean isGameOver() {
+        return gameStatus.getStrikeCount() == 3;
+    }
 }
