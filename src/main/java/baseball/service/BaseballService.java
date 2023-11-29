@@ -8,14 +8,18 @@ public class BaseballService {
 
     private final RandomNumberGenerator numberGenerator;
     private final Umpire umpire;
+    private BaseballNumbers computerNumbers;
 
     public BaseballService() {
         this.numberGenerator = new RandomNumberGenerator();
         this.umpire = new Umpire();
     }
 
+    public void init() {
+        this.computerNumbers = numberGenerator.generate();
+    }
+
     public void playRound(BaseballNumbers playerNumbers) {
-        BaseballNumbers computerNumbers = numberGenerator.generate();
         umpire.match(playerNumbers.getNumbers(), computerNumbers.getNumbers());
     }
 
@@ -25,5 +29,9 @@ public class BaseballService {
 
     public boolean isGameOver() {
         return umpire.isGameOver();
+    }
+
+    public void resetGame() {
+        init();
     }
 }
