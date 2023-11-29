@@ -1,13 +1,13 @@
-package baseball.domain.computer;
+package baseball.domain;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenerateComputerNumber {
+public class RandomNumberGenerator {
 
-    public void execute() {
+    public BaseballNumbers generate() {
         List<Integer> numbers = new ArrayList<>();
         while (numbers.size() < 3) {
             int randomNumber = Randoms.pickNumberInRange(1, 9);
@@ -15,6 +15,6 @@ public class GenerateComputerNumber {
                 numbers.add(randomNumber);
             }
         }
-        Computer computer = new Computer(numbers);
+        return new BaseballNumbers(numbers);
     }
 }

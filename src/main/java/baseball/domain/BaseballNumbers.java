@@ -1,16 +1,21 @@
-package baseball.domain.computer;
+package baseball.domain;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Computer {
+public class BaseballNumbers {
 
     private final List<Integer> numbers;
 
-    public Computer(List<Integer> numbers) {
+    public BaseballNumbers(List<Integer> numbers) {
         validate(numbers);
         this.numbers = numbers;
+    }
+
+    public List<Integer> getNumbers() {
+        return Collections.unmodifiableList(numbers);
     }
 
     private void validate(List<Integer> numbers) {
