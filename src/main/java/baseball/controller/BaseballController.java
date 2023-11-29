@@ -1,5 +1,6 @@
 package baseball.controller;
 
+import baseball.domain.BaseballNumbers;
 import baseball.service.BaseballService;
 import baseball.view.BaseballView;
 
@@ -25,12 +26,12 @@ public class BaseballController {
 
     }
 
-    private List<Integer> validateIsNumber(String input) throws IllegalArgumentException {
+    private BaseballNumbers validateIsNumber(String input) throws IllegalArgumentException {
         try {
             List<Integer> numbers = Arrays.stream(input.split(""))
                     .map(Integer::parseInt)
                     .collect(Collectors.toList());
-            return numbers;
+            return new BaseballNumbers(numbers);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("[ERROR] 숫자만 입력해주세요.");
         }
