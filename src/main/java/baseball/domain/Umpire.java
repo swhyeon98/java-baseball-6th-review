@@ -15,8 +15,8 @@ public class Umpire {
     }
 
     public void match(List<Integer> playerNumbers, List<Integer> computerNumbers) {
-        int strikeCount = 0;
-        int ballCount = 0;
+        int strikeCount = INITIAL_VALUE;
+        int ballCount = INITIAL_VALUE;
 
         for (int i = INITIAL_VALUE; i < MAX_NUMBER_SIZE; i++) {
             int playerNumber = playerNumbers.get(i);
