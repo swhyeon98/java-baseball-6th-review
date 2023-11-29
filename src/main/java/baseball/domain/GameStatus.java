@@ -1,6 +1,7 @@
 package baseball.domain;
 
 public class GameStatus {
+
     private int strikeCount;
     private int ballCount;
 
