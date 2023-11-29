@@ -5,6 +5,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static baseball.global.BaseballConstant.MAX_NUMBER_RANGE;
+import static baseball.global.BaseballConstant.MAX_NUMBER_SIZE;
+import static baseball.global.BaseballConstant.MIN_NUMBER_RANGE;
+
 public class BaseballNumbers {
 
     private final List<Integer> numbers;
@@ -33,14 +37,14 @@ public class BaseballNumbers {
 
     private void validateNumberRange(List<Integer> numbers) {
         boolean outOfNumberRange = numbers.stream()
-                .anyMatch(number -> number < 1 || number > 9);
+                .anyMatch(number -> number < MIN_NUMBER_RANGE || number > MAX_NUMBER_RANGE);
         if (outOfNumberRange) {
             throw new IllegalArgumentException("[ERROR] 숫자 범위를 벗어나는 수가 존재합니다. 숫자의 범위는 1부터 9까지입니다.");
         }
     }
 
     private void validateSize(List<Integer> numbers) {
-        if (numbers.size() != 3) {
+        if (numbers.size() != MAX_NUMBER_SIZE) {
             throw new IllegalArgumentException("[ERROR] 숫자는 3자리만 허용됩니다.");
         }
     }

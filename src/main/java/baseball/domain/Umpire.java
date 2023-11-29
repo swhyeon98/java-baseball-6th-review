@@ -2,6 +2,10 @@ package baseball.domain;
 
 import java.util.List;
 
+import static baseball.global.BaseballConstant.INITIAL_VALUE;
+import static baseball.global.BaseballConstant.MAX_NUMBER_SIZE;
+import static baseball.global.BaseballConstant.WINNING_STRIKE_COUNT;
+
 public class Umpire {
 
     private final GameStatus gameStatus;
@@ -14,7 +18,7 @@ public class Umpire {
         int strikeCount = 0;
         int ballCount = 0;
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = INITIAL_VALUE; i < MAX_NUMBER_SIZE; i++) {
             int playerNumber = playerNumbers.get(i);
 
             if (computerNumbers.get(i).equals(playerNumber)) {
@@ -33,6 +37,6 @@ public class Umpire {
     }
 
     public boolean isGameOver() {
-        return gameStatus.getStrikeCount() == 3;
+        return gameStatus.getStrikeCount() == WINNING_STRIKE_COUNT;
     }
 }
