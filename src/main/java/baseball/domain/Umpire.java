@@ -4,17 +4,15 @@ import java.util.List;
 
 public class Umpire {
 
-    private int strikeCount;
-    private int ballCount;
+    private final GameStatus gameStatus;
 
     public Umpire() {
-        this.ballCount = 0;
-        this.strikeCount = 0;
+        this.gameStatus = new GameStatus();
     }
 
-    public Umpire match(List<Integer> playerNumbers, List<Integer> computerNumbers) {
-        strikeCount = 0;
-        ballCount = 0;
+    public void match(List<Integer> playerNumbers, List<Integer> computerNumbers) {
+        int strikeCount = 0;
+        int ballCount = 0;
 
         for (int i = 0; i < 3; i++) {
             int playerNumber = playerNumbers.get(i);
@@ -27,6 +25,10 @@ public class Umpire {
                 ballCount++;
             }
         }
-        return this;
+        gameStatus.update(strikeCount, ballCount);
+    }
+
+    public String getResult() {
+        return gameStatus.toString();
     }
 }
