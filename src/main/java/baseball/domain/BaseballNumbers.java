@@ -21,6 +21,7 @@ public class BaseballNumbers {
     private void validate(List<Integer> numbers) {
         validateDuplicate(numbers);
         validateNumberRange(numbers);
+        validateSize(numbers);
     }
 
     private void validateDuplicate(List<Integer> numbers) {
@@ -35,6 +36,12 @@ public class BaseballNumbers {
                 .anyMatch(number -> number < 1 || number > 9);
         if (outOfNumberRange) {
             throw new IllegalArgumentException("[ERROR] 숫자 범위를 벗어나는 수가 존재합니다. 숫자의 범위는 1부터 9까지입니다.");
+        }
+    }
+
+    private void validateSize(List<Integer> numbers) {
+        if (numbers.size() != 3) {
+            throw new IllegalArgumentException("[ERROR] 숫자는 3자리만 허용됩니다.");
         }
     }
 }
