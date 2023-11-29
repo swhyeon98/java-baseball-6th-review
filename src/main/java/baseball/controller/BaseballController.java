@@ -7,12 +7,9 @@ import baseball.view.BaseballView;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class BaseballController {
-
-    private static final Pattern NUMBER_PATTERN = Pattern.compile("^[0-9]+$");
 
     private final BaseballView baseballView;
     private final BaseballService baseballService;
