@@ -1,6 +1,7 @@
 package baseball.controller;
 
 import baseball.domain.BaseballNumbers;
+import baseball.domain.GameCommand;
 import baseball.service.BaseballService;
 import baseball.view.BaseballView;
 
@@ -21,9 +22,11 @@ public class BaseballController {
         this.baseballService = baseballService;
     }
 
-    public void start() {
+    public void gameStart() {
         baseballView.printGameStart();
-
+        playRounds();
+        baseballView.printGameOver();
+        readRestartOrQuitGame();
     }
 
     private BaseballNumbers validateIsNumber(String input) throws IllegalArgumentException {
@@ -34,6 +37,44 @@ public class BaseballController {
             return new BaseballNumbers(numbers);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("[ERROR] 숫자만 입력해주세요.");
+        }
+    }
+
+    private String playRound() {
+        while (true) {
+            try {
+                BaseballNumbers playerNumbers = validateIsNumber(baseballView.readPlayerNumbers());
+                baseballService.playRound(playerNumbers);
+                return baseballService.getRoundResult();
+            } catch (IllegalArgumentException e) {
+                baseballView.printErrorMessage(e.getMessage());
+            }
+        }
+    }
+
+    private void playRounds() {
+        while (true) {
+            String roundResult = playRound();
+            baseballView.printRoundResult(roundResult);
+            if (baseballService.isGameOver()) {
+                break;
+            }
+        }
+    }
+
+    private void readRestartOrQuitGame() {
+        while (true) {
+            try {
+                GameCommand command = GameCommand.
+                        findCommandByInput(Integer.parseInt(baseballView.readRestartOrExitGame()));
+                if (command == GameCommand.RESTART) {
+                    baseballService.resetGame();
+                    gameStart();
+                }
+                break;
+            } catch (IllegalArgumentException e) {
+                e.getMessage();
+            }
         }
     }
 }
