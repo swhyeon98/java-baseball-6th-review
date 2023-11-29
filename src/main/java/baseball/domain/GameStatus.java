@@ -15,6 +15,10 @@ public class GameStatus {
         this.ballCount = ballCount;
     }
 
+    public int getStrikeCount() {
+        return strikeCount;
+    }
+
     @Override
     public String toString() {
         if (strikeCount > 0 && ballCount > 0) {
