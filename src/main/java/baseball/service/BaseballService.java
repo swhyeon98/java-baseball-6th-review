@@ -13,9 +13,10 @@ public class BaseballService {
     public BaseballService() {
         this.numberGenerator = new RandomNumberGenerator();
         this.umpire = new Umpire();
+        init();
     }
 
-    public void init() {
+    private void init() {
         this.computerNumbers = numberGenerator.generate();
     }
 
