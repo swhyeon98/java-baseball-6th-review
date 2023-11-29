@@ -14,13 +14,16 @@ public class BaseballService {
         this.umpire = new Umpire();
     }
 
-    public boolean playRound(BaseballNumbers playerNumbers) {
+    public void playRound(BaseballNumbers playerNumbers) {
         BaseballNumbers computerNumbers = numberGenerator.generate();
         umpire.match(playerNumbers.getNumbers(), computerNumbers.getNumbers());
-        return umpire.isGameOver();
     }
 
     public String getRoundResult() {
         return umpire.getResult();
+    }
+
+    public boolean isGameOver() {
+        return umpire.isGameOver();
     }
 }
