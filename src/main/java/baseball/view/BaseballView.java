@@ -29,4 +29,8 @@ public class BaseballView {
     public String readRestartOrExitGame() {
         return inputView.readRestartOrExitGame();
     }
+
+    public void printErrorMessage(String message) {
+        outputView.printErrorMessage(message);
+    }
 }
