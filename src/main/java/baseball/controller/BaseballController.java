@@ -65,7 +65,7 @@ public class BaseballController {
                 GameCommand command = GameCommand.
                         findCommandByInput(Integer.parseInt(baseballView.readRestartOrExitGame()));
                 if (command == GameCommand.RESTART) {
-                    baseballService.resetGame();
+                    baseballService.init();
                     gameStart();
                 }
                 break;

@@ -16,7 +16,7 @@ public class BaseballService {
         init();
     }
 
-    private void init() {
+    public void init() {
         this.computerNumbers = numberGenerator.generate();
     }
 
@@ -30,9 +30,5 @@ public class BaseballService {
 
     public boolean isGameOver() {
         return umpire.isGameOver();
-    }
-
-    public void resetGame() {
-        init();
     }
 }
