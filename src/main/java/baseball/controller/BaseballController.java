@@ -70,7 +70,7 @@ public class BaseballController {
                 }
                 break;
             } catch (IllegalArgumentException e) {
-                e.getMessage();
+                baseballView.printErrorMessage(e.getMessage());
             }
         }
     }
