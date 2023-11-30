@@ -5,8 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static baseball.global.BaseballConstant.BASEBALL_NUMBER_SIZE;
 import static baseball.global.BaseballConstant.MAX_NUMBER_RANGE;
-import static baseball.global.BaseballConstant.MAX_NUMBER_SIZE;
 import static baseball.global.BaseballConstant.MIN_NUMBER_RANGE;
 
 public class BaseballNumbers {
@@ -47,7 +47,7 @@ public class BaseballNumbers {
     }
 
     private void validateSize(List<Integer> numbers) {
-        if (numbers.size() != MAX_NUMBER_SIZE) {
+        if (numbers.size() != BASEBALL_NUMBER_SIZE) {
             throw new IllegalArgumentException("[ERROR] 숫자는 3자리만 허용됩니다.");
         }
     }
