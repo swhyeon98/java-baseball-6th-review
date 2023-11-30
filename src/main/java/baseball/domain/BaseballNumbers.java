@@ -36,11 +36,14 @@ public class BaseballNumbers {
     }
 
     private void validateNumberRange(List<Integer> numbers) {
-        boolean outOfNumberRange = numbers.stream()
-                .anyMatch(number -> number < MIN_NUMBER_RANGE || number > MAX_NUMBER_RANGE);
-        if (outOfNumberRange) {
+        if (isOutOfNumberRange(numbers)) {
             throw new IllegalArgumentException("[ERROR] 숫자 범위를 벗어나는 수가 존재합니다. 숫자의 범위는 1부터 9까지입니다.");
         }
+    }
+
+    private boolean isOutOfNumberRange(List<Integer> numbers) {
+        return numbers.stream()
+                .anyMatch(number -> number < MIN_NUMBER_RANGE || number > MAX_NUMBER_RANGE);
     }
 
     private void validateSize(List<Integer> numbers) {
