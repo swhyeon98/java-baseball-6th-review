@@ -14,3 +14,4 @@ public class InputView {
         return Console.readLine();
     }
 }
+

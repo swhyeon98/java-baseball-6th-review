@@ -35,3 +35,4 @@ public class GameStatus {
         return "낫싱";
     }
 }
+

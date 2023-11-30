@@ -22,3 +22,4 @@ public class RandomNumberGenerator {
         return new BaseballNumbers(numbers);
     }
 }
+

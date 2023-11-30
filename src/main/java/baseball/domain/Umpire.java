@@ -40,3 +40,4 @@ public class Umpire {
         return gameStatus.getStrikeCount() == WINNING_STRIKE_COUNT;
     }
 }
+

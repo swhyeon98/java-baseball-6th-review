@@ -34,3 +34,4 @@ public class BaseballView {
         outputView.printErrorMessage(message);
     }
 }
+
