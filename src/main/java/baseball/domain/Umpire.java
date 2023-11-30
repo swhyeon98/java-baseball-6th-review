@@ -2,8 +2,8 @@ package baseball.domain;
 
 import java.util.List;
 
+import static baseball.global.BaseballConstant.BASEBALL_NUMBER_SIZE;
 import static baseball.global.BaseballConstant.INITIAL_VALUE;
-import static baseball.global.BaseballConstant.MAX_NUMBER_SIZE;
 import static baseball.global.BaseballConstant.WINNING_STRIKE_COUNT;
 
 public class Umpire {
@@ -18,7 +18,7 @@ public class Umpire {
         int strikeCount = INITIAL_VALUE;
         int ballCount = INITIAL_VALUE;
 
-        for (int i = INITIAL_VALUE; i < MAX_NUMBER_SIZE; i++) {
+        for (int i = INITIAL_VALUE; i < BASEBALL_NUMBER_SIZE; i++) {
             int playerNumber = playerNumbers.get(i);
 
             if (computerNumbers.get(i).equals(playerNumber)) {
