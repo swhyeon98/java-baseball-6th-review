@@ -28,7 +28,7 @@ public class BaseballService {
         return umpire.getResult();
     }
 
-    public boolean isGameOver() {
-        return umpire.isGameOver();
+    public boolean isGameFinished() {
+        return umpire.isGameFinished();
     }
 }

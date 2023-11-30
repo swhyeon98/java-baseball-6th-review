@@ -53,7 +53,7 @@ public class BaseballController {
         while (true) {
             String roundResult = playRound();
             baseballView.printRoundResult(roundResult);
-            if (baseballService.isGameOver()) {
+            if (baseballService.isGameFinished()) {
                 break;
             }
         }
