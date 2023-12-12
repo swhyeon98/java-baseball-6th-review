@@ -46,7 +46,7 @@ class UmpireTest {
         // then
         assertThat(result).isEqualTo("1볼 1스트라이크");
     }
-    
+
     @Test
     void 숫자와_위치가_모두_다를_경우_볼_스트라이크_낫싱() throws Exception {
         // given

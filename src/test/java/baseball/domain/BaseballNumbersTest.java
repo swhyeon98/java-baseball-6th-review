@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class BaseballNumbersTest {
-    
+
     @Test
     void 생성_성공() throws Exception {
         // given
@@ -16,7 +16,7 @@ class BaseballNumbersTest {
 
         // when
         BaseballNumbers baseballNumbers = new BaseballNumbers(numbers);
-        
+
         // then
         assertThat(baseballNumbers.getNumbers()).isEqualTo(numbers);
     }
